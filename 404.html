@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Benicio von Felten</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Willkommen zur Offiziellen Webseite von Benicio von Felten.">
+    <style type="text/css">
+        body {
+            background-color: #f0f0f2;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        div {
+            width: 600px;
+            margin: 5em auto;
+            padding: 2em;
+            background-color: #fdfdff;
+            border-radius: 0.5em;
+            box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+        }
+        a:link, a:visited {
+            color: #38488f;
+            text-decoration: none;
+        }
+        @media (max-width: 700px) {
+            div {
+                margin: 0 auto;
+                width: auto;
+            }
+        }
+        #fullscreen-video {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h1>404</h1>
+    <p>Seems like u tried to reach a Webpage that doesent exist. <br>I've already contacted Benicio to fix this!</p>
+    <a href="https://www.BeniciovonFelten.ch">Try getting back here.</a>
+</div>
+
+<iframe id="fullscreen-video" src="" 
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<script>
+    document.body.addEventListener('click', function() {
+        var video = document.getElementById('fullscreen-video');
+        
+        // Set the src attribute on click to avoid preloading
+        video.src = "https://www.youtube.com/embed/WuUPFbU8GQI?playlist=WuUPFbU8GQI&autoplay=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1";
+        
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) { // Firefox
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { // IE/Edge
+            video.msRequestFullscreen();
+        }
+        
+        video.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
